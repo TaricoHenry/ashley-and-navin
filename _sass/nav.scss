@@ -1,0 +1,23 @@
+.w3-bar {
+    display: flex;
+    flex-direction: row;
+    a {
+        border: 5px solid black !important ;
+        width: 16vw !important;
+    }
+}
+
+.logo-nav {
+    display: inherit;
+    flex-grow: 1;
+}
+
+.menu-nav {
+    display: inherit;
+    flex-grow: 3;
+    justify-content: right;
+}
+
+.w3-bar a:first-of-type {
+    float: left;
+}

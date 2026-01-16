@@ -1,0 +1,93 @@
+---
+layout: default
+title: Ashley & Navin
+---
+<body>
+    <div class="name-section">
+        <h1>Ashley and Navin</h1>
+        <img src="./assets/images/an-white.png">
+        
+    </div>
+
+    <div class="flavourtext-section normal-width">
+        <h2>Our Story</h2>
+
+        {%
+            include image-text-h.html
+            type="left"
+            title="Lorem Ipsum"
+            text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            image="assets/images/antique.jpg"
+        %}
+
+        {%
+            include image-text-h.html
+            type="right"
+            title="Lorem Ipsum"
+            text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            image="assets/images/frogs.jpg"
+        %}
+
+        {%
+            include image-text-h.html
+            type="left"
+            title="Lorem Ipsum"
+            text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            image="assets/images/europe.jpg"
+        %}
+    </div>
+
+    <div class ="rsvp-section">
+        <!--
+        <div class="corner-dec">
+            <img class="corner-tl" src="./assets/images/gold_corner.svg">
+            <img class="corner-tr" src="./assets/images/gold_corner.svg">
+        </div>
+        -->
+        <h2>Reception</h2>
+        <p>RSVP</p>
+        <div class="guest">
+            <h3>Hello PERSON</h3>
+            <p> There are supposed to be details about when and where and time in this paragraph. Maybe something cute idk. You get the idea</p>
+        </div>
+        <div class ="questions-section">
+            <p>Will you be attending our wedding?</p>
+            <div>
+                <input type="button" value="Yes"/>
+                <input type="button" value="No"/>
+            </div>
+            <!--
+            <div class="divider_1"></div>
+            -->
+            <div id="questions" class="questions">
+                <label for"attend">Do you have any allergies?</label>
+                <input type="text" id="allergies" name="" placeholder="Allergic to not having a good time"/>
+                <label for"attend">Do you have a song recommendation?</label>
+                <input type="text" id="song" name="" placeholder="Oppa Gangam Style!"/>
+                <label for"attend">Are you ready to have a good time?</label>
+                <input type="text" id="fun" name="" placeholder="HECK yeahh"/>
+            </div>
+        </div>
+        <button>
+            Submit
+        </button>
+        <!--
+            <div class="corner-dec">
+            <img class="corner-bl" src="./assets/images/gold_corner.svg">
+            <img class="corner-br" src="./assets/images/gold_corner.svg">
+        </div>
+        -->
+        
+    </div>
+    <div class="hindu-section">
+        <img src="./assets/images/temple_crown.svg">
+        <div class="details">
+            <h2>The Hindu Wedding</h2>
+            <p> There are supposed to be details about when and where and time in this paragraph. Maybe something cute idk. You get the idea</p>
+        
+        <img class="mandala" src="./assets/images/mandala.svg">
+
+        </div>
+    </div>
+
+</body>

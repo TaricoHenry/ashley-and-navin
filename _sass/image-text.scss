@@ -1,0 +1,32 @@
+.image-text {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    text-align: right;
+    padding: 4em 2em 4em 2em;
+    .text {
+        width: 50%;
+        text-align: inherit;
+        h3 {
+            text-align: inherit;
+        }
+        p {
+            text-align: inherit;
+        }
+        padding: 0 1em 0 1em;
+    }
+    .image {
+        width: 50%;
+        img {
+            object-fit: cover;
+            width: 100%;
+        }
+    }
+}
+
+.right {
+    flex-flow: row-reverse;
+    text-align: left;
+
+}
