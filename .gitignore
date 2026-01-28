@@ -1,3 +1,15 @@
 Gemfile.lock
 _site
 .DS_Store
+firebase/firestore-debug.log
+firebase/functions/index copy 2.js
+firebase/functions/index copy.js
+firebase/functions/index-learn copy.txt
+firebase/functions/.env.*
+.env
+firebase/firebase-debug.log
+.vscode/settings.json
+node_modules/
+*.local
+firebase/functions/express-backup.js
+firebase/functions/firestore-debug.log

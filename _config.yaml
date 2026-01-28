@@ -1,1 +1,10 @@
 host: 0.0.0.0
+
+domain: ash-wedding.com # if you want to force HTTPS, specify the domain without the http at the start, e.g. example.com
+url: https://ash-wedding.com  # the base hostname and protocol for your site, e.g. http://example.com
+# baseurl: /REPOSITORY-NAME/      # place folder name if the site is served in a subfolder
+
+
+exclude:
+  - firebase
+  - firebase/**
