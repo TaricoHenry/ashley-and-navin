@@ -13,3 +13,5 @@ node_modules/
 *.local
 firebase/functions/express-backup.js
 firebase/functions/firestore-debug.log
+*.secret
+*serviceAccount*.json
