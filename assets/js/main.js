@@ -6,14 +6,22 @@ document.getElementById("button-toggle").addEventListener("change", () => {
 })
 function toggle() {
     var el = window.event.target;
-    if (el.value == "No") {
+    if (el.value == "Click Here") {
+        //document.getElementsByClassName("questions")[0].classList.toggle("toggled");  
+        document.getElementsByClassName("main")[0].classList.toggle("toggled");  
+        document.getElementsByClassName("questions")[0].classList.toggle("yes");
+        el.value = "Yes";    
+    }
+    else if (el.value == "No") {
         el.value = "Yes";
+        document.getElementsByClassName("questions")[0].classList.toggle("yes");
+        document.getElementsByClassName("questions")[0].classList.toggle("no");
     }
     else {
         el.value = "No";
+        document.getElementsByClassName("questions")[0].classList.toggle("yes");
+        document.getElementsByClassName("questions")[0].classList.toggle("no");
     }
-    document.getElementsByClassName("questions")[0].classList.toggle("toggled");
-    document.getElementsByClassName("main")[0].classList.toggle("toggled");
 }
 
 
