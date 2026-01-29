@@ -1,4 +1,5 @@
 Gemfile.lock
+_site
 .DS_Store
 firebase/firestore-debug.log
 firebase/functions/index copy 2.js
