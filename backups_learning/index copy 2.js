@@ -19,7 +19,7 @@ const logger = require("firebase-functions/logger");
 const cors = require("cors")({ origin: true });
 const express = require("express");
 
-const globals = require("./globals");
+const globals = require("../firebase/functions/globals");
 
 const { initializeApp } = require("firebase-admin/app");
 const { getFirestore, FieldValue } = require("firebase-admin/firestore");

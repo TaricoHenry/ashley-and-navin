@@ -5,7 +5,7 @@ const cors = require("cors")({ origin: true });
 const express = require("express");
 
 //Reference to globals
-const globals = require("./globals");
+const globals = require("../firebase/functions/globals");
 
 
 
