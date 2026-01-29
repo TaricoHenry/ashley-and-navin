@@ -15,8 +15,13 @@ function requireBasicAuth(req, res) {
   const decoded = Buffer.from(auth.split(" ")[1], "base64").toString();
   const [user, pass] = decoded.split(":");
 
-  const ADMIN_USER = process.env.ADMIN_USER;
-  const ADMIN_PASS = process.env.ADMIN_PASS;
+const isLocal =
+  process.env.FUNCTIONS_EMULATOR === "true" ||
+  process.env.NODE_ENV !== "production";
+
+const ADMIN_USER = isLocal ? process.env.LOCAL_ADMIN_USER : process.env.ADMIN_USER;
+const ADMIN_PASS = isLocal ? process.env.LOCAL_ADMIN_PASS : process.env.ADMIN_PASS;
+
 
   // If secrets are not set in the environment, fail closed
   if (!ADMIN_USER || !ADMIN_PASS) {

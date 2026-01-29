@@ -1,0 +1,191 @@
+openapi: 3.0.3
+info:
+  title: Ashley Wedding API (Public)
+  version: 1.0.0
+  description: Public endpoints for token validation, routing, and RSVP submission.
+
+servers:
+  - url: /v1
+
+paths:
+  /token/{tokenId}/status:
+    get:
+      summary: Get token status
+      parameters:
+        - name: tokenId
+          in: path
+          required: true
+          schema:
+            type: string
+          description: 6-character alphanumeric token (doc id)
+      responses:
+        "200":
+          description: Token found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TokenStatusResponse"
+        "404":
+          description: Token not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/MessageResponse"
+
+  /token/{tokenId}/resolve:
+    get:
+      summary: Resolve token and redirect
+      parameters:
+        - name: tokenId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "302":
+          description: Redirects to appropriate invite page based on token validity
+
+  /token/{tokenId}/reply:
+    post:
+      summary: Submit RSVP response
+      parameters:
+        - name: tokenId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/RsvpPayload"
+            examples:
+              yesNo:
+                value:
+                  rsvp: "yes"
+                  allergies: false
+                  songRequest: "Caribbean Queen"
+              allergies:
+                value:
+                  rsvp: "yes"
+                  allergies: true
+                  allergyDescription: "Peanuts"
+      responses:
+        "201":
+          description: RSVP stored successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CreatedResponse"
+        "400":
+          description: Payload validation failed
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/MessageResponse"
+        "404":
+          description: Token not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/MessageResponse"
+        "410":
+          description: Token already used
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/MessageResponse"
+        "429":
+          description: Rate limited
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/MessageResponse"
+        "500":
+          description: Server error saving response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+
+components:
+  schemas:
+    TokenStatusResponse:
+      type: object
+      properties:
+        token:
+          type: string
+        guestName:
+          type: string
+          nullable: true
+        route:
+          type: string
+          nullable: true
+        valid:
+          type: boolean
+        usedAt:
+          nullable: true
+          description: Firestore timestamp or null
+          oneOf:
+            - type: string
+            - type: object
+            - type: "null"
+        message:
+          type: string
+      required: [token, valid, message]
+
+    RsvpPayload:
+      type: object
+      additionalProperties: false
+      properties:
+        rsvp:
+          type: string
+          enum: ["yes", "no"]
+        allergies:
+          type: boolean
+        allergyDescription:
+          type: string
+        songRequest:
+          type: string
+      required: [rsvp]
+
+    CreatedResponse:
+      type: object
+      properties:
+        recordId:
+          type: string
+        firestoreCollection:
+          type: string
+        message:
+          type: string
+      required: [recordId, firestoreCollection, message]
+
+    MessageResponse:
+      type: object
+      properties:
+        message:
+          type: string
+      required: [message]
+
+    ErrorResponse:
+      type: object
+      properties:
+        recordId:
+          type: string
+        firestoreCollection:
+          type: string
+        message:
+          type: string
+        error:
+          type: object
+          properties:
+            message:
+              type: string
+            code:
+              nullable: true
+              oneOf:
+                - type: string
+                - type: integer
+                - type: "null"
+      required: [message]
