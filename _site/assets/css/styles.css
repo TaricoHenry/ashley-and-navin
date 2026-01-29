@@ -1,0 +1,105 @@
+body { font-family: "LovelyMay"; font-size: 2vw; color: black; margin: 0; background-color: #E6D7C7; display: flex; flex-direction: column; align-items: center; }
+body h1 { font-family: "LovelyMay"; font-size: 10vw; text-align: center; color: #F4EFE7; }
+body h2 { font-family: "LovelyMay"; font-size: 5em; text-align: center; }
+body h3 { font-family: "Josefin Sans"; text-align: center; }
+body p { font-size: 1em; font-family: "MinionProRegular", sans-serif; text-align: center; }
+
+.full-width { width: 100%; }
+
+.normal-width { width: 100%; max-width: 1200px; }
+
+.name-section { display: flex; flex-direction: column; align-items: center; justify-content: space-around; position: relative; background-image: url("../images/mountains.jpg"); background-repeat: no-repeat; background-color: #9EAD9B; background-position: center; width: 100%; max-height: 1080px; }
+.name-section h1 { position: relative; color: white; /*
+top: 70%;
+left: 50%;
+transform: translate(-50%, -50%);
+*/ width: 100%; }
+.name-section img { width: 60%; object-fit: contain; margin-bottom: -5em; }
+
+.global-shadow { box-shadow: 8px 8px 4px #8C8C8C24; }
+
+.flavourtext-section { max-width: 1200px; }
+
+.gold { color: #C6A15A; }
+
+.burgundy { color: #8B1E2D; }
+
+.sage { color: #9EAD9B; }
+
+.kerned { letter-spacing: 0.1em; font-size: 1.8em; }
+
+.rsvp-section { position: relative; display: flex; flex-direction: row; justify-content: space-between; align-items: center; background-color: #F4EFE7; background-image: url("../images/background_opaque.png"); background-position: center; background-size: cover; max-width: 1200px; height: 1200px; min-height: 820px; max-height: 80vh; width: 100%; }
+.rsvp-section p { font-size: 1.2em; margin: 0 0 0.6em 0; }
+.rsvp-section h2 { writing-mode: sideways-lr; font-family: "AngeleRegular"; font-size: 10em; line-height: 1.2em; margin: 0; padding: 0; color: #9EAD9B; }
+.rsvp-section img { position: absolute; right: 0%; object-fit: contain; height: 800px; }
+.rsvp-section .cards { /*
+display: inherit;
+flex-direction: column;
+justify-content: space-around;
+*/ width: 80%; }
+.rsvp-section .card { position: relative; display: flex; flex-direction: column; justify-content: space-between; align-items: center; padding: 2em 5em 2em 0em; margin: 0 2em 0 2em; width: 80%; min-height: 360px; min-width: 400px; z-index: 2; overflow: visible; background-color: white; }
+.rsvp-section .text { display: inherit; flex-direction: row; justify-content: center; align-items: center; width: 100%; }
+.rsvp-section .text div { width: 80%; }
+.rsvp-section .main { align-items: flex-start; transform: translateY(150px); transition: transform 0.5s; }
+.rsvp-section .questions { z-index: 1; font-size: 1em; transform: translateY(-210px); transition: transform 0.5s; border-left: 6em #9EAD9B solid; display: flex; flex-direction: column; justify-content: space-around; align-items: center; }
+.rsvp-section .questions label { font-family: "Josefin Sans"; text-align: center; }
+.rsvp-section .questions input { font-family: "Josefin Sans"; text-align: center; margin-bottom: 1em; }
+.rsvp-section .toggle { display: flex; flex-direction: column; justify-content: center; align-items: center; }
+.rsvp-section .toggle p { font-size: 1.5em; }
+.rsvp-section .toggle div { width: 100%; display: inherit; justify-content: center; }
+.rsvp-section .press { font-family: "AngeleRegular"; font-size: 1.5em; padding: 0.25em 1.5em 0.25em 1.5em; background-color: transparent; border: #C6A15A 2px solid; border-radius: 18px; height: 2em; }
+.rsvp-section .press:hover { background-color: #C6A15A; color: white; }
+.rsvp-section .toggled { transform: translateY(0px); }
+.rsvp-section .toggled .toggle input { background-color: #C6A15A; color: white; }
+
+.hindu-section::before { content: ""; background-image: url("../images/background.png"); background-position: center; background-size: cover; display: block; position: absolute; left: 0; top: 0; height: 100%; width: 100%; z-index: -1; opacity: 0.1; }
+
+.hindu-section { display: inherit; flex-direction: row; align-items: center; position: relative; background-color: #F4EFE7; background-image: url("../images/background_opaque.png"); background-position: center; background-size: cover; width: 100%; max-width: 1200px; min-height: 600px; margin-top: 2em; padding: 2em 1em 0 0; }
+.hindu-section h2 { font-size: inherit; font-size: 3em; font-family: "MinionProRegular", sans-serif; text-decoration: none; letter-spacing: 0.25em; line-height: 1em; color: #9EAD9B; padding: 0 1em 0 1em; }
+.hindu-section p { font-size: 1.5em; line-height: 1.2em; }
+.hindu-section .text { display: inherit; flex-direction: column; align-items: center; position: absolute; left: 20%; background-color: #F4EFE7; padding: 2em 1em 2em 1em; max-width: 900px; width: 60%; z-index: 1; }
+.hindu-section .text img { height: 6em; }
+.hindu-section .mandala-corner { position: absolute; top: 0%; max-width: 20vh; opacity: 0.6; }
+.hindu-section .mandala { opacity: 0.6; object-fit: contain; max-width: 60vh; max-height: 600px; }
+
+@media (min-width: 1200px) { .name-section h1 { font-size: 8em; }
+  .name-section img { max-width: 900px; }
+  .hindu-section p { font-size: 1.5em; }
+  .rsvp-section .card { padding-right: 2em; } }
+@media (max-width: 900px) { .hindu-section h2 { font-size: 2em; }
+  .hindu-section p { font-size: 1em; }
+  .hindu-section .text { left: 10%; width: 80%; }
+  .rsvp-section .press { font-size: 1.2em; }
+  .rsvp-section .card { padding: 1em 1em 1em 0em; margin: 0em; width: 80%; }
+  .rsvp-section .card h2 { font-size: 5em; }
+  .rsvp-section .card h3 { font-size: 1.2em; }
+  .rsvp-section .card p { font-size: 1em; }
+  .rsvp-section .card .questions { margin: 0; }
+  .rsvp-section .card .questions label { font-size: 1em; }
+  .rsvp-section .card .questions input { font-size: 1em; height: 1.5em; margin-bottom: 0.5em; } }
+/*
+.questions>p { text-align: left; border: 1px solid black; width: 100%;
+}
+*/
+.w3-bar { display: flex; flex-direction: row; }
+.w3-bar a { border: 5px solid black !important; width: 16vw !important; }
+
+.logo-nav { display: inherit; flex-grow: 1; }
+
+.menu-nav { display: inherit; flex-grow: 3; justify-content: right; }
+
+.w3-bar a:first-of-type { float: left; }
+
+.image-text { display: flex; flex-direction: row; width: 100%; align-items: center; text-align: right; padding: 4em 2em 4em 2em; }
+.image-text .text { width: 50%; text-align: inherit; padding: 0 1em 0 1em; }
+.image-text .text h3 { text-align: inherit; }
+.image-text .text p { text-align: inherit; }
+.image-text .image { width: 50%; }
+.image-text .image img { object-fit: cover; width: 100%; }
+
+.right { flex-flow: row-reverse; text-align: left; }
+
+@font-face { font-family: "LovelyMay"; src: url("../../assets/fonts/LovelyMayRegular.otf"); }
+@font-face { font-family: "AngeleBold"; src: url("../../assets/fonts/AngeleBold.otf"); }
+@font-face { font-family: "AngeleRegular"; src: url("../../assets/fonts/AngeleRegular.otf"); }
+@font-face { font-family: "MinionProRegular"; src: url("../../assets/fonts/MinionProRegular.otf"); }
