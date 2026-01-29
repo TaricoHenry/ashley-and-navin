@@ -2,7 +2,7 @@ host: 0.0.0.0
 
 # GitHub Pages URL (NO custom domain)
 url: https://taricohenry.github.io
-baseurl: /Ashley_wedding
+baseurl: /ashley-and-navin
 
 exclude:
   - firebase
